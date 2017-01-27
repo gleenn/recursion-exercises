@@ -12,3 +12,11 @@
   (cond (= 0 a) b
         (= 0 b) a
         :else (gcd b (mod a b))))
+
+(defn range
+  ([n] (range 0 n 0 '()))
+  ([n m] (range n m n '()))
+  ([n m i lst] (if (= i m)
+               lst
+               (conj (range n m (inc i) lst) i))))
+

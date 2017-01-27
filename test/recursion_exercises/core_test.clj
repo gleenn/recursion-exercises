@@ -25,3 +25,9 @@
              (gcd 25 5) => 5
              (gcd 10 100) => 10
              (gcd 10 101) => 1))
+
+(facts range
+       (fact "returns sequence of 0 to n when given n"
+             (range 0) => '()
+             (range 5) => '(0 1 2 3 4)
+             (range 3 5) => '(3 4)))
