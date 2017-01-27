@@ -16,3 +16,12 @@
              (factorial 4) => 24
              (factorial 5) => 120
              (factorial 6) => 720))
+
+(facts gcd
+       (fact "returns the greatest common divisor"
+             (gcd 5 1) => 1
+             (gcd 5 3) => 1
+             (gcd 5 25) => 5
+             (gcd 25 5) => 5
+             (gcd 10 100) => 10
+             (gcd 10 101) => 1))

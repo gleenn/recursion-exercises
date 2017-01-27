@@ -7,3 +7,8 @@
 
 (defn factorial [n]
   (if (= 1 n) 1 (* n (factorial (dec n)))))
+
+(defn gcd [a b]
+  (cond (= 0 a) b
+        (= 0 b) a
+        :else (gcd b (mod a b))))
