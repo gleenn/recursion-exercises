@@ -7,3 +7,12 @@
              (full-tree 0) => []
              (full-tree 1) => [[] []]
              (full-tree 2) => [[[] []] [[] []]]))
+
+(facts factorial
+       (fact "(factorial n) returns n!"
+             (factorial 1) => 1
+             (factorial 2) => 2
+             (factorial 3) => 6
+             (factorial 4) => 24
+             (factorial 5) => 120
+             (factorial 6) => 720))
