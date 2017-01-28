@@ -1,5 +1,5 @@
 (ns recursion-exercises.core-test
-  (:require [midje.sweet :refer :all]
+  (:require [midje.sweet :refer [facts fact =>]]
             [recursion-exercises.core :refer :all]))
 
 (facts full-tree
@@ -31,3 +31,21 @@
              (range 0) => '()
              (range 5) => '(0 1 2 3 4)
              (range 3 5) => '(3 4)))
+
+(facts match
+       (fact "returns if needle matches haystack or nil"
+             (match "" nil) => nil
+             (match nil "") => nil
+             (match "a" "a") => "a"
+             (match "b" "aa") => nil
+             (match "ab" "ab") => "ab"
+             (match "a?" "") => ""
+             (match "a?" "a") => "a"
+             (match "aa?" "a") => "a"
+             (match "aa?b" "ab") => "ab"
+             (match "aa?b?" "a") => "a"
+             (match "aa?b?" "ab") => "ab"
+             (match "aa?b?" "aa") => "aa"
+             (match "aa?b?" "aab") => "aab"
+             (match "" "aa") => nil
+             (match "a" "aa") => nil))
